@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>User signup form</h2>
+<form action="/" method="post">
+    <label>
+        Username:
+        <br>
+        <input type="text" name="username" value="{{ html_username }}"/>
+        <div>
+            {% for list_item in input_errors['username'] %}
+            {{ list_item }}
+            {% endfor %}
+            <br>
+            <br>
+        </div>
+    </label>
+    <label>
+        Password:
+        <br>
+        <input type="password" name="password"/>
+        <div>
+            {% for list_item in input_errors['password'] %}
+            {{ list_item }}
+            {% endfor %}
+            <br>
+            <br>
+        </div>
+    </label>
+    <label>
+        Confirm password:
+        <br>
+        <input type="password" name="password2"/>
+        <div>
+            {% for list_item in input_errors['password2'] %}
+            {{ list_item }}
+            {% endfor %}
+            <br>
+            <br>
+        </div>
+    </label>
+    <label>
+        Email:
+        <br>
+        <input type="text" name="email" value="{{ html_email }}"/>
+        <div>
+            {% for list_item in input_errors['email'] %}
+            {{ list_item }}
+            {% endfor %}
+            <br>
+            <br>
+        </div>
+    </label>
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}
