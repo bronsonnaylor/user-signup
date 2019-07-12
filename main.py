@@ -22,10 +22,8 @@ def form_data():
     if py_username == "":
         input_errors['username'].append('Input cannot be blank. ')
 
-    for letter in py_username:
-        if letter == ' ':
-            input_errors['username'].append('Input cannot have spaces. ')
-            break
+    if ' ' in py_username:
+        input_errors['username'].append('Input cannot have spaces. ')
 
     if len(py_username) < 3:
         input_errors['username'].append('Username must have at least 3 characters. ')
